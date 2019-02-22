@@ -6,9 +6,9 @@ At MIT, some subjects running [CAT-SOOP](https://catsoop.mit.edu/website) sites 
 
 ### How it works:
 
+* Have the Queue open in your browser like below
 ![Empty Queue](queue.png)
 
-* Have the Queue open like above in your browser
 * Run `cccc.py`
 * If the script sees that the browser showing the Queue is the active window, it will wait for a student to add theirself
 * At that point, the script presses `c` on your keyboard for you until the student is claimed
@@ -25,5 +25,5 @@ The latter assumption should be straightforward to change if desired.
 
 ### Dependencies:
 
-* `pip install pywin32`
-* `pip install keyboard`
+* `pywin32`
+* `keyboard`
