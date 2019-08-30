@@ -6,7 +6,7 @@ At MIT, some subjects running [CAT-SOOP](https://catsoop.mit.edu/website) sites 
 
 ### How it works:
 
-![Empty Queue](queue.png)
+![Empty Queue](https://i.imgur.com/1mGSGSO.png)
 
 * Have the Queue open in your browser like above
 * Run `cccc.py`
