@@ -23,6 +23,7 @@ def main():
    # (True means the active window is the CAT-SOOP help queue)
    last_state = True
    current_state = False
+   last_active_title = ""
 
    while True:
       active_title = GetWindowText(GetForegroundWindow())
@@ -42,14 +43,14 @@ def main():
             if unclaimed:
                keyboard.press_and_release('c')
 
-      if current_state != last_state:
+      if current_state != last_state or active_title != last_active_title:
          stdout.write("\r")
-         if not current_state:
-            line = "(Active window is not the help queue)"
-         else:
+         if current_state:
             line = f"Claimed: {claimed:<2d} Unclaimed: {unclaimed:<2d}"
             if unclaimed:
                line += " c!"
+         else:
+            line = "(Active window is not the help queue)"
          
          max_line_len = max(max_line_len, len(line))
 
@@ -58,6 +59,7 @@ def main():
          stdout.flush()
 
       last_state = current_state
+      last_active_title = active_title
 
       sleep(max(0, TIMEOUT - (time() - timer)))
       timer = time()
